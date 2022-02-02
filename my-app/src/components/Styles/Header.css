@@ -1,45 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+
 .header-main {
-  box-sizing: border-box;
-  width: 100%;
+  color: ivory;
+  font-family: "Roboto", sans-serif;
+  min-height: 50px;
+  max-height: 5vh;
   display: flex;
-  justify-content: center;
-  align-items: baseline;
-  padding: 1em;
-  margin-bottom: 2em;
-  background-color: #0b3854;
-  color: #fff;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: #0b3854;
+  padding: 0 2em;
+  margin: 0;
 }
 
-.nav-main {
+.name {
+  padding-left: 1em;
+  font-size: 2em;
+  white-space: nowrap;
+}
+
+.nav-list {
+  list-style-type: none;
   display: flex;
-  justify-content: space-between;
-  width: 50vw;
+  flex-direction: row;
+  justify-self: right;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1em;
 }
 
 .nav-item {
-  font-size: 1.5em;
-  list-style-type: none;
-  display: block;
-  flex: 0 1 auto;
-  padding: 0 1em;
-  text-decoration: none;
-  color: #fff;
+  padding: 1em;
+  color: ivory;
 }
 
-.nav-item:hover {
-  border-radius: 5px;
+.nav-item a {
+  text-decoration: none;
+  color: ivory;
+  padding: 1em;
+}
+
+.nav-item a:hover {
   animation: hoverBackground 0.5s forwards;
+}
+
+/*Media Queries*/
+
+@media (max-width: 845px) {
+  .nav-list {
+    display: none;
+  }
 }
 
 /*Animations*/
 
 @keyframes hoverBackground {
   from {
-    background-color: #0b3854;
   }
   to {
-    background-color: #78c3fb;
-    box-shadow: 0 0 25px #78c3fb;
-    color: #0b3854;
+    box-shadow: inset 5px 5px black;
+    border-radius: 25px;
   }
 }

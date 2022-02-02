@@ -2,12 +2,12 @@ import React from "react";
 import { useState } from "react";
 import "./index.css";
 
-import Header from "../components/Header.jsx";
+import Navbar from "../components/Navbar.jsx";
 
 export default function indexPage() {
   return (
     <div className="app">
-      <Header />
+      <Navbar />
     </div>
   );
 }

@@ -19,6 +19,7 @@
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.3.1",
     "gatsby": "^4.6.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
