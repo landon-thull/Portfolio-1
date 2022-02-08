@@ -15,22 +15,18 @@ const headerData = [
   {
     label: "Home",
     href: "#home",
-    id: 1,
   },
   {
     label: "About",
     href: "#about",
-    id: 2,
   },
   {
     label: "Portfolio",
     href: "#portfolio",
-    id: 3,
   },
   {
     label: "Contact",
     href: "#contact",
-    id: 4,
   },
 ];
 
@@ -38,13 +34,13 @@ export default function Header() {
   const isMobile = useMediaQuery("(max-width:916px)");
   const [isOpen, setIsOpen] = React.useState(false);
 
-  function desktopMapper(props: { label: string; href: string; id: number }) {
+  function desktopMapper(props: { label: string; href: string }) {
     return (
       <Button
         variant="text"
         href={props.href}
         size="large"
-        key={props.id}
+        key={props.label}
         sx={{
           color: "#F5F9E9",
           margin: "0 2vw",
@@ -56,16 +52,16 @@ export default function Header() {
     );
   }
 
-  function mobileMapper(props: { label: string; href: string; id: number }) {
+  function mobileMapper(props: { label: string; href: string }) {
     return (
       <Box
+        key={props.label}
         sx={{
           flexDirection: "column",
         }}
       >
         <Button
           href={props.href}
-          key={props.id}
           sx={{
             padding: "0.75rem",
             color: "#F5F9E9",
