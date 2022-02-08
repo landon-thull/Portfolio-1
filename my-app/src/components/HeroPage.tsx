@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Paper,
-  Box,
-  Typography,
-  Container,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Typography, Container, useMediaQuery } from "@mui/material";
 import Particles from "react-tsparticles";
 
 const particlesConfig = {
