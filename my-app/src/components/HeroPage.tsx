@@ -65,16 +65,22 @@ export default function HeroPage() {
         }}
       >
         <Typography
-          variant={isMobile ? "h2" : "h1"}
+          variant={isMobile ? "h4" : "h2"}
           component="h1"
           color="#F5F9E9"
+          sx={{
+            fontWeight: "800",
+          }}
         >
           LANDON THULL
         </Typography>
         <Typography
-          variant={isMobile ? "h3" : "h2"}
+          variant={isMobile ? "h5" : "h3"}
           component="h2"
           color="#F5F9E9"
+          sx={{
+            fontWeight: "100",
+          }}
         >
           Front-End Web Developer
         </Typography>
