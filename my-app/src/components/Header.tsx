@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -14,19 +15,19 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const headerData = [
   {
     label: "Home",
-    href: "#home",
+    path: "/",
   },
   {
     label: "About",
-    href: "#about",
+    path: "/about",
   },
   {
     label: "Portfolio",
-    href: "#portfolio",
+    path: "/portfolio",
   },
   {
     label: "Contact",
-    href: "#contact",
+    path: "/contact",
   },
 ];
 
@@ -34,11 +35,10 @@ export default function Header() {
   const isMobile = useMediaQuery("(max-width:916px)");
   const [isOpen, setIsOpen] = React.useState(false);
 
-  function desktopMapper(props: { label: string; href: string }) {
+  function desktopMapper(props: { label: string; path: string }) {
     return (
       <Button
         variant="text"
-        href={props.href}
         size="large"
         key={props.label}
         sx={{
@@ -47,12 +47,14 @@ export default function Header() {
           padding: "8px 2vw",
         }}
       >
-        {props.label}
+        <Link className="link" to={props.path}>
+          {props.label}
+        </Link>
       </Button>
     );
   }
 
-  function mobileMapper(props: { label: string; href: string }) {
+  function mobileMapper(props: { label: string; path: string }) {
     return (
       <Box
         key={props.label}
@@ -61,14 +63,15 @@ export default function Header() {
         }}
       >
         <Button
-          href={props.href}
           sx={{
             padding: "0.75rem",
             color: "#F5F9E9",
             width: "100%",
           }}
         >
-          {props.label}
+          <Link className="link" to={props.path}>
+            {props.label}
+          </Link>
         </Button>
       </Box>
     );
@@ -98,7 +101,7 @@ export default function Header() {
       <Box>
         {!isMobile ? (
           <AppBar
-            position="static"
+            position="absolute"
             sx={{
               bgcolor: "#0B3854",
               flexDirection: "row",
@@ -112,7 +115,7 @@ export default function Header() {
           </AppBar>
         ) : (
           <AppBar
-            position="static"
+            position="absolute"
             sx={{
               bgcolor: "#0B3854",
               flexDirection: "row",
@@ -122,7 +125,7 @@ export default function Header() {
             }}
           >
             {displayDesktop()}
-            <Box marginRight={2}>
+            <Box marginRight={0}>
               <Button onClick={() => setIsOpen(true)} size="large">
                 <KeyboardArrowDownIcon
                   sx={{

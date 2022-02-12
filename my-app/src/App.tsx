@@ -1,17 +1,34 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import About from "./components/About";
+import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
 import HeroPage from "./components/HeroPage";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <div className="content">
-        <HeroPage />
+    <Router>
+      <div className="App">
+        <div className="header">
+          <Header />
+        </div>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<HeroPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
-      <Header />
-    </div>
+    </Router>
   );
 }
+
+//<Route path="/about" element={<About />} />
+//<Route path="/portfolio" element={<Portfolio />} />
+//<Route path="/contact" element={<Contact />} />
 
 export default App;

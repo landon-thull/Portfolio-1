@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Container, useMediaQuery } from "@mui/material";
 import Particles from "react-tsparticles";
+import * as Scroll from "react-scroll";
 
 const particlesConfig = {
   background: {
