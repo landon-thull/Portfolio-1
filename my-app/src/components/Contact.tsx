@@ -10,6 +10,7 @@ export default function Contact() {
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
+        color: "#F5F9E9",
       }}
     >
       Contact page

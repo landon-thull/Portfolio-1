@@ -10,9 +10,8 @@ export default function Portfolio() {
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
+        color: "#F5F9E9",
       }}
-    >
-      Portfolio page
-    </Container>
+    ></Container>
   );
 }

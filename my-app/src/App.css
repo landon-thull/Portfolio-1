@@ -6,6 +6,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.content {
+  position: relative;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -13,7 +13,7 @@ const particlesConfig = {
       value: "#F5F9E9",
     },
     links: {
-      color: "#78C3FB",
+      color: "#0B3854",
       distance: 100,
       enable: true,
     },
