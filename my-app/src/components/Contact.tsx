@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs, { init } from "emailjs-com";
 
 init("AjjZZsi3UM9dVtkDv");
