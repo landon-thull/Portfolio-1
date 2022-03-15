@@ -96,7 +96,7 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <header className="header-main">
       <Box>
         {!isMobile ? (
           <AppBar

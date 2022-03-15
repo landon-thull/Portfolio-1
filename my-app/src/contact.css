@@ -1,0 +1,32 @@
+#contact {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background-color: white;
+  margin: 0.75em;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.visible {
+  display: block;
+  color: #f5f9e9;
+}
+
+.invisible {
+  display: none;
+}
+
+.form {
+  width: 100%;
+  max-width: 750px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
