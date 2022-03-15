@@ -43,7 +43,6 @@ export default function Header() {
         key={props.label}
         sx={{
           color: "#F5F9E9",
-          margin: "0 2vw",
           padding: "8px 2vw",
         }}
       >

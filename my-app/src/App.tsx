@@ -11,9 +11,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="header">
-          <Header />
-        </div>
         <div className="content">
           <Routes>
             <Route path="/" element={<HeroPage />} />

@@ -1,37 +1,23 @@
-import { Container, Box } from "@mui/material";
+import { Container } from "@mui/material";
+import Header from "./Header";
 
-export default function About() {
+export default function Contact() {
   return (
-    <Container
-      sx={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-        justifyContent: "center",
-        alignItems: "center",
-        display: "flex",
-        flexDirection: "column",
-        color: "#F5F9E9",
-      }}
-    >
-      <Box
+    <div className="about">
+      <Header />
+      <Container
         sx={{
-          width: "100%",
-          height: "50%",
-          textAlign: "center",
+          position: "relative",
+          width: "100vw",
+          height: "100vh",
+          justifyContent: "center",
+          alignItems: "center",
+          display: "flex",
+          color: "#F5F9E9",
         }}
       >
-        About Me:
-      </Box>
-      <Box
-        sx={{
-          width: "100%",
-          height: "50%",
-          textAlign: "center",
-        }}
-      >
-        My Skills:
-      </Box>
-    </Container>
+        About Page
+      </Container>
+    </div>
   );
 }

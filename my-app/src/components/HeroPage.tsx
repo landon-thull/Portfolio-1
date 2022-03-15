@@ -1,6 +1,32 @@
 import React from "react";
-import { Box, Typography, Container, useMediaQuery } from "@mui/material";
+import {
+  Button,
+  Box,
+  Typography,
+  Container,
+  useMediaQuery,
+} from "@mui/material";
+import { Link } from "react-router-dom";
 import Particles from "react-tsparticles";
+
+const headerData = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "About",
+    path: "/about",
+  },
+  {
+    label: "Portfolio",
+    path: "/portfolio",
+  },
+  {
+    label: "Contact",
+    path: "/contact",
+  },
+];
 
 const particlesConfig = {
   background: {
@@ -41,6 +67,25 @@ const particlesConfig = {
 
 export default function HeroPage() {
   const isMobile = useMediaQuery("(max-width:916px)");
+
+  function mapper(props: { label: string; path: string }) {
+    return (
+      <Button
+        variant="text"
+        size="large"
+        key={props.label}
+        sx={{
+          color: "#F5F9E9",
+          padding: "0.25em 2.5em",
+        }}
+      >
+        <Link className="link" to={props.path}>
+          {props.label}
+        </Link>
+      </Button>
+    );
+  }
+
   return (
     <Container
       sx={{
@@ -50,12 +95,14 @@ export default function HeroPage() {
         justifyContent: "center",
         alignItems: "center",
         display: "flex",
+        flexDirection: "column",
       }}
     >
       <Box>
         <Particles id="hero-particles" options={particlesConfig} />
       </Box>
       <Box
+        position={isMobile ? "relative" : "absolute"}
         sx={{
           bgcolor: "rgba(0, 0, 0, .75)",
           textAlign: "center",
@@ -84,6 +131,19 @@ export default function HeroPage() {
         >
           Front-End Web Developer
         </Typography>
+      </Box>
+      <Box
+        className="hero-header"
+        marginTop={isMobile ? "5em" : "30em"}
+        flexDirection={isMobile ? "column" : "row"}
+        sx={{
+          bgcolor: "rgba(0, 0, 0, .75)",
+          display: "flex",
+          borderRadius: "15px",
+          boxShadow: "0 0 10px",
+        }}
+      >
+        {headerData.map(mapper)}
       </Box>
     </Container>
   );
